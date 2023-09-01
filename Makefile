@@ -28,16 +28,9 @@ composer-install: ## Installs composer dependencies
 migrate-database: ## Runs the migrations
 	U_ID=${UID} docker exec -it --user ${UID} ${DOCKER_BE} php artisan migrate
 
-migrate-test-database: ## Runs the migrations database tests
-	U_ID=${UID} docker exec -it --user ${UID} ${DOCKER_BE} php artisan migrate --env=test
-
-
-
 all-tests: ## Runs the tests
 	U_ID=${UID} docker exec -it --user ${UID} ${DOCKER_BE} php artisan test
 
 ssh-be: ## ssh's into the be container
 	U_ID=${UID} docker exec -it --user ${UID} ${DOCKER_BE} bash
 
-perm: ## permisos
-	U_ID=${UID} docker exec -it --user ${UID} ${DOCKER_BE} chmod -R 777 storage
