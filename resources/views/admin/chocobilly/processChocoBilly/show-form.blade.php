@@ -14,7 +14,7 @@
     'admin.shared.includes.breadcrumb',
     [
         'title' => "Procesa Choco Billy",
-        'level_1_title' => "Proceesar Choco Billy"
+        'level_1_title' => "Procesar Choco Billy"
     ]
     )
 
