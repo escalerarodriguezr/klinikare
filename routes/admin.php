@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdnChocobos\ProcessAdnChocobos\GetProcessAdnChocobosController;
+use App\Http\Controllers\Admin\AdnChocobos\ProcessAdnChocobos\PostProcessAdnChocobosController;
 use App\Http\Controllers\Admin\Auth\AuthLoginController;
 use App\Http\Controllers\Admin\ChocoBilly\ProcessChocoBilly\GetProcessChocoBillyController;
 use App\Http\Controllers\Admin\ChocoBilly\ProcessChocoBilly\PostProcessChocoBillyController;
@@ -21,6 +23,17 @@ Route::middleware(['auth'])->group(function() {
         '/process-file',
         PostProcessChocoBillyController::class
     )->name('admin.process-choco-billy.process');
+
+    //ADNChocobos
+    Route::get(
+        '/process-adn-chocobos',
+        GetProcessAdnChocobosController::class
+    )->name('admin.process-adn-chocobos.showForm');
+
+    Route::post(
+        '/process-adn-chocobos-file',
+        PostProcessAdnChocobosController::class
+    )->name('admin.process-adn-chocobos.process');
 });
 
 

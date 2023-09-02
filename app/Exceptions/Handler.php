@@ -2,14 +2,14 @@
 
 namespace App\Exceptions;
 
-use App\Src\Application\ChocoBilly\Command\ChocoBillyFileException;
+use App\Src\Domain\AdnChocobos\Exception\ChocobosFileException;
+use App\Src\Domain\ChocoBilly\Exception\ChocoBillyFileException;
 use App\Src\Domain\Shared\Cqrs\CommandGuardException;
 use App\Src\Domain\Shared\Cqrs\CommandValidatorException;
 use App\Src\Domain\Shared\Cqrs\QueryGuardException;
 use App\Src\Domain\Shared\Cqrs\QueryValidatorException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -49,11 +49,7 @@ class Handler extends ExceptionHandler
             //
         });
 
-
-
         $this->renderable(function (Throwable $e, $request) {
-
-
            if( $e instanceof ValidationException === false ){
 
                if( $e instanceof NotFoundHttpException){
@@ -87,15 +83,10 @@ class Handler extends ExceptionHandler
                    }
                }
 
-
-
                if(str_contains($request->url(), '/admin/')){
                    return response()->view('errors.admin/500')->setStatusCode(500);
                }
-
-
            }
-
         });
     }
 
@@ -109,7 +100,8 @@ class Handler extends ExceptionHandler
     private function getDomainExceptionJsonResponseServiceException(): array
     {
         return [
-            ChocoBillyFileException::class
+            ChocoBillyFileException::class,
+            ChocobosFileException::class
         ];
     }
 

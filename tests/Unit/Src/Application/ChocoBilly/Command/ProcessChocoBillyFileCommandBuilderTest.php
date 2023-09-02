@@ -2,9 +2,9 @@
 
 namespace Tests\Unit\Src\Application\ChocoBilly\Command;
 
-use App\Src\Application\ChocoBilly\Command\ChocoBillyFileException;
 use App\Src\Application\ChocoBilly\Command\ProcessChocoBillyFileCommand;
 use App\Src\Application\ChocoBilly\Command\ProcessChocoBillyFileCommandBuilder;
+use App\Src\Domain\ChocoBilly\Exception\ChocoBillyFileException;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
