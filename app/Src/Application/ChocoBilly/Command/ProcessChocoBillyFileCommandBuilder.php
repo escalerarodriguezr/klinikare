@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace App\Src\Application\ChocoBilly\Command;
 
 use App\Src\Domain\ChocoBilly\Dto\ChocoBillyFileRow;
+use App\Src\Domain\ChocoBilly\Exception\ChocoBillyFileException;
 use Illuminate\Http\Request;
 
 class ProcessChocoBillyFileCommandBuilder

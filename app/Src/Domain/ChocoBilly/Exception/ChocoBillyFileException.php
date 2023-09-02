@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Src\Application\ChocoBilly\Command;
+namespace App\Src\Domain\ChocoBilly\Exception;
 
 class ChocoBillyFileException extends \DomainException
 {
